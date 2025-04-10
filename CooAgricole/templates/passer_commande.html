@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Passer une commande pour {{ produit.nom }}</h2>
+
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="quantite">Quantité :</label>
+            <input type="number" class="form-control" id="quantite" name="quantite" min="1" value="1" required>
+            <div class="invalid-feedback">
+                Veuillez entrer une quantité valide.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="adresse_livraison">Adresse de livraison :</label>
+            <input type="text" class="form-control" id="adresse_livraison" name="adresse_livraison" required>
+            <div class="invalid-feedback">
+                Veuillez entrer une adresse de livraison.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Passer commande</button>
+    </form>
+
+    <h2>Passer une commande pour {{ produit.nom }}</h2>
+<p>Prix: {{ produit.prix }} FCFA</p>
+<p>Quantité disponible: {{ produit.quantite }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="quantite">Quantité:</label>
+    <input type="number" name="quantite" id="quantite" min="1" max="{{ produit.quantite }}" required>
+    <button type="submit" class="btn btn-success">Confirmer la commande</button>
+</form>
+
+
+</div>
+{% endblock %}

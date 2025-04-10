@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2>Confirmation de votre commande</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Produit commandé :</strong> {{ commande.produit.nom }}</p>
+            <p><strong>Quantité :</strong> {{ commande.quantite }}</p>
+            <p><strong>Date de commande :</strong> {{ commande.date_commande }}</p>
+            <p><strong>Adresse de livraison :</strong> {{ commande.adresse_livraison }}</p>
+        </div>
+        <div class="card-footer text-right">
+            <a href="{% url 'produits:liste_produits' %}" class="btn btn-secondary">Retour à la liste des produits</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

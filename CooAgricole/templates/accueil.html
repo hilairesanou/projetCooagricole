@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/scripts.js' %}"></script>
+
+{% block title %}
+Accueil - CooAgricole
+{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center bg-light p-5 rounded">
+    <h1 class="display-4"><u>Bienvenue sur la plateforme CooAgricole</u></h1>
+
+    <div class="dynamic-text-container text-center mt-4">
+        <h2 class="lead" id="dynamic-text">
+            Au Burkina Faso, le secteur agricole constitue une composante clé de l’économie. 
+            Il contribue pour <strong>35 %</strong> au produit intérieur brut (PIB) 
+            et emploie <strong>82 %</strong> de la population active. 
+            Utilisez notre plateforme pour intégrer la coopération agricole et bénéficier 
+            de toutes les fonctionnalités qu'elle offre !
+        </h2>
+    </div>
+
+    <p class="scrolling-text"><h3>Explorez les fonctionnalités comme la gestion des membres, les formations, et bien plus encore !</h3></p>
+    <hr class="my-4">
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'membres:liste_membres' %}" class="btn btn-primary m-2">Voir les Membres</a>
+        <a href="{% url 'membres:inscription' %}" class="btn btn-primary m-2">Devenir membre</a>
+        <a href="{% url 'produits:liste_produits' %}" class="btn btn-success m-2">Voir les Produits</a>
+        <a href="{% url 'formation:liste_formations' %}" class="btn btn-warning m-2">Voir les Formations</a>
+        <a href="{% url 'commandes:vente_en_ligne' %}" class="btn btn-info m-2">Vente en Ligne</a>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'images/membres.jpeg' %}" class="card-img-top" alt="Membres">
+            <div class="card-body">
+                <h5 class="card-title">Gestion des Membres</h5>
+                <p class="card-text">Voir la liste des membres de la coopérative.</p>
+                <a href="{% url 'membres:liste_membres' %}" class="btn btn-primary">Voir les Membres</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'images/produits.jpeg' %}" class="card-img-top" alt="Produits">
+            <div class="card-body">
+                <h5 class="card-title">Gestion des Produits</h5>
+                <p class="card-text">Accédez à la liste des produits et gérez vos inventaires efficacement.</p>
+                <a href="{% url 'produits:liste_produits' %}" class="btn btn-success">Voir les Produits</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{% static 'images/formation.jpeg' %}" class="card-img-top" alt="Formations">
+            <div class="card-body">
+                <h5 class="card-title">Formations</h5>
+                <p class="card-text">Inscrivez-vous aux formations et améliorez vos compétences agricoles.</p>
+                <a href="{% url 'formation:liste_formations' %}" class="btn btn-warning">Voir les Formations</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-5">
+    <p>© 2024 CooAgricole. Tous droits réservés.</p>
+    <div class="social-icons">
+        <a href="#"><img src="{% static 'icons/facebook.jpeg' %}" alt="Facebook" class="me-2"></a>
+        <a href="#"><img src="{% static 'icons/instagram.jpeg' %}" alt="Instagram" class="me-2"></a>
+        <a href="#"><img src="{% static 'icons/x.jpeg' %}" alt="X" class="me-2"></a>
+    </div>
+</footer>
+{% endblock %}

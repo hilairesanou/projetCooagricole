@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Vente en Ligne - CooAgricole{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Produits disponibles à la vente</h2>
+    <div class="row">
+        {% for produit in produits %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{ produit.image.url }}" class="card-img-top" alt="{{ produit.nom }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ produit.nom }}</h5>
+                    <p class="card-text">{{ produit.description }}</p>
+                    <p class="card-text">Prix: {{ produit.prix }} FCFA</p>
+                    <a href="{% url 'commandes:passer_commande' produit.id %}" class="btn btn-primary">Acheter</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

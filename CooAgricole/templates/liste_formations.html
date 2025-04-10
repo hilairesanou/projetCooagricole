@@ -1,0 +1,18 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Formations pour les agriculteurs</h2>
+<ul>
+    {% for formation in formations %}
+        <li>
+            <h3>{{ formation.titre }}</h3>
+            <p>{{ formation.description }}</p>
+            <p>Date : {{ formation.date_debut }} - {{ formation.date_fin }}</p>
+            <p>Prix : {{ formation.prix }} FCFA</p>
+            <a href="{% url 'formation:souscrire_formation' formation.id %}" class="btn btn-primary">Souscrire</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

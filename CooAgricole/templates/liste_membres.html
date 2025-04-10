@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Liste des Membres
+{% endblock %}
+
+{% block content %}
+<h1>Liste des Membres</h1>
+<ul>
+    {% for membre in membres %}
+        <li>{{ membre.prenom }} {{ membre.nom }} - {{ membre.email }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'membres:inscription' %}" class="btn btn-primary m-2">Devenir membre</a>
+{% endblock %}

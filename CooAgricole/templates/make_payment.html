@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - CooAgricole</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> <!-- Assurez-vous que Bootstrap est bien chargé -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Paiement Orange Money</h2>
+        
+        <!-- Messages de succès ou d'erreur -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <form method="post" action="{% url 'produits:make_payment' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="phone_number">Numéro de téléphone</label>
+                        {{ form.phone_number }}
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Montant à payer</label>
+                        {{ form.amount }}
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Payer</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <a href="{% url 'produits:liste_produits' %}" class="btn btn-secondary">Retour aux produits</a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script> <!-- Assurez-vous que Bootstrap est bien chargé -->
+</body>
+</html>

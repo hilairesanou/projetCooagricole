@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+
+{% block title %}Ajouter un Membre{% endblock %}  <!-- Titre de la page -->
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Ajouter un Nouveau Membre</h2>
+
+    <!-- Formulaire pour ajouter un membre -->
+    <form method="post">
+        {% csrf_token %}  <!-- Protection contre les attaques CSRF -->
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom:</label>
+            <input type="text" class="form-control" id="nom" name="nom" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter Membre</button>
+        <a href="{% url 'membres:liste_membres' %}" class="btn btn-secondary">Retour à la liste</a>  <!-- Lien pour revenir à la liste -->
+    </form>
+</div>
+{% endblock %}
