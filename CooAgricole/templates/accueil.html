@@ -32,38 +32,48 @@ Accueil - CooAgricole
     </div>
 </div>
 
-<div class="row mt-5">
-    <div class="col-md-4">
-        <div class="card">
-            <img src="{% static 'images/membres.jpeg' %}" class="card-img-top" alt="Membres">
-            <div class="card-body">
-                <h5 class="card-title">Gestion des Membres</h5>
-                <p class="card-text">Voir la liste des membres de la coopérative.</p>
-                <a href="{% url 'membres:liste_membres' %}" class="btn btn-primary">Voir les Membres</a>
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div style="width: 300px; height: 200px;">
+                <img src="{% static 'images/membres.jpeg' %}" 
+                
+                class="card-img-top" 
+                alt="Membres">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des Membres</h5>
+                    <p class="card-text">Voir la liste des membres de la coopérative.</p>
+                    <a href="{% url 'membres:liste_membres' %}" class="btn btn-primary">Voir les Membres</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div style="width: 300px; height: 200px;">
+                <img 
+                src="{% static 'images/produits.jpeg' %}" 
+                class="card-img-top" 
+                alt="Produits">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des Produits</h5>
+                    <p class="card-text">Accédez à la liste des produits et gérez vos inventaires efficacement.</p>
+                    <a href="{% url 'produits:liste_produits' %}" class="btn btn-success">Voir les Produits</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div style="width: 300px; height: 200px;">
+                <img src="{% static 'images/formation.jpeg' %}" 
+                class="card-img-top" alt="Formations">
+                <div class="card-body">
+                    <h5 class="card-title">Formations</h5>
+                    <p class="card-text">Inscrivez-vous aux formations et améliorez vos compétences agricoles.</p>
+                    <a href="{% url 'formation:liste_formations' %}" class="btn btn-warning">Voir les Formations</a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="{% static 'images/produits.jpeg' %}" class="card-img-top" alt="Produits">
-            <div class="card-body">
-                <h5 class="card-title">Gestion des Produits</h5>
-                <p class="card-text">Accédez à la liste des produits et gérez vos inventaires efficacement.</p>
-                <a href="{% url 'produits:liste_produits' %}" class="btn btn-success">Voir les Produits</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <img src="{% static 'images/formation.jpeg' %}" class="card-img-top" alt="Formations">
-            <div class="card-body">
-                <h5 class="card-title">Formations</h5>
-                <p class="card-text">Inscrivez-vous aux formations et améliorez vos compétences agricoles.</p>
-                <a href="{% url 'formation:liste_formations' %}" class="btn btn-warning">Voir les Formations</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <footer class="footer mt-5">
     <p>© 2024 CooAgricole. Tous droits réservés.</p>

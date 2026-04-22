@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'CooAgricole.wsgi.application'
 # Database configuration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cooagricole',  
         'USER': 'sanou',       
         'PASSWORD': 'hilairesanou',  
@@ -107,3 +107,6 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+ALLOWED_HOSTS = ['*']
